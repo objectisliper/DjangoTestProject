@@ -2,40 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db106e87-2938-461d-84c9-2ddaa0bd08e4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/.editorconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/angular.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/e2e/protractor.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/e2e/src/app.e2e-spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/e2e/src/app.po.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/e2e/tsconfig.e2e.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/package-lock.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/app/app-routing.module.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/app/app.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/app/app.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/app/app.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/app/app.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/app/app.module.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/assets/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/browserslist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/environments/environment.prod.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/environments/environment.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/karma.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/main.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/polyfills.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/styles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/test.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/tsconfig.app.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/tsconfig.spec.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/src/tslint.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/tsconfig.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/trelloApi/front-end/tslint.json" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/assets/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/.editorconfig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/angular.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/e2e/protractor.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/e2e/src/app.e2e-spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/e2e/src/app.po.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/e2e/tsconfig.e2e.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/package-lock.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/app/app-routing.module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/app/app.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/app/app.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/app/app.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/app/app.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/app/app.module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/browserslist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/environments/environment.prod.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/environments/environment.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/karma.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/main.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/polyfills.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/styles.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/test.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/tsconfig.app.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/tsconfig.spec.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/src/tslint.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/tsconfig.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/front-end/tslint.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trelloApi/urls.py" afterPath="$PROJECT_DIR$/trelloApi/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/trelloApi/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
-              <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+              <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
               <folding>
                 <element signature="e#633#665#0" expanded="true" />
               </folding>
@@ -148,6 +147,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testWork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testWork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front-end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testWork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testWork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front-end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -413,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545078111066</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Init">
+      <created>1545136298615</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1545136298616</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -498,7 +544,7 @@
     <entry file="file://$PROJECT_DIR$/trelloApi/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
-          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+          <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
           <folding>
             <element signature="e#633#665#0" expanded="true" />
           </folding>
