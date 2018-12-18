@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
 <body>
     <app-root>Loading the app...</app-root>
 
-  <script type="text/javascript" src="{% static 'front-end' %}"></script>
+  <script type="text/javascript" src="{% static 'front-end/runtime.js' %}"></script>
   <script type="text/javascript" src="{% static 'front-end/polyfills.js' %}"></script>
   <script type="text/javascript" src="{% static 'front-end/styles.js' %}"></script>
   <script type="text/javascript" src="{% static 'front-end/vendor.js' %}"></script>
