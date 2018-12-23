@@ -1,0 +1,45 @@
+<section class="login p-fixed d-flex text-center common-img-bg justify-content-center" style="height: 100vh;">
+    <div class="auth-fluid d-flex align-items-center">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="login-card card-body auth-body">
+                    <form class="md-float-material" #loginForm="ngForm" (ngSubmit)="submit()"  (keyup)="userStartInput()">
+                        <div class="auth-box">
+                            <div class="row m-b-20">
+                                <div class="col-md-12">
+                                    <h3 class="text-center txt-primary">Sign In</h3>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Your Email Address" name="email"
+                                       [(ngModel)]="user.name" required>
+                                <span class="md-line"></span>
+                            </div>
+
+                            <div class="input-group">
+                                <input type="password" class="form-control" placeholder="Password" name="password"
+                                       [(ngModel)]="user.password" required>
+                                <span class="md-line"></span>
+                            </div>
+
+                            <div class="col-md-12 form-txt-danger" *ngIf="errorMessage">
+                                {{ errorMessage }}
+                            </div>
+
+                            <div class="row m-t-30">
+                                <div class="col-md-12">
+                                    <button type="submit" [disabled]="!loginForm.form.valid"
+                                            class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20"
+                                    >
+                                        Sign in
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
