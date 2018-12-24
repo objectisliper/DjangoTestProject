@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
     constructor(private authService: AuthService, private router: Router) {
         this.user = new User();
-        this.user.email = '';
+        this.user.name = '';
         this.user.password = '';
     }
 

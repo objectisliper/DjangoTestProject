@@ -2,6 +2,10 @@ from django.shortcuts import render
 from trello import TrelloClient, create_oauth_token
 from django.http import HttpResponse
 from backend.models import TrelloTokens
+from rest_framework.response import Response
+from rest_framework import permissions
+from rest_framework.views import APIView
+from .serializers import TrelloTokensSerializers
 
 
 def test(request):
@@ -13,3 +17,11 @@ def test(request):
     )
     all_boards = client.list_boards()
     return HttpResponse('test')
+
+
+class TrelloTokensApi(APIView):
+
+    def get(self, request):
+        tokens = TrelloTokens.objects.filter(user_id=request.user.id)
+        serialized_tokens = TrelloTokensSerializers(tokens, many=True)
+        return Response({"data": serialized_tokens.data})

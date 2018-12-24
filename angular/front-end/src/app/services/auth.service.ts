@@ -38,7 +38,7 @@ export class AuthService {
 
                 return false;
             })
-          )
+          );
     }
 
     /**
@@ -54,8 +54,8 @@ export class AuthService {
      * @param httpHeaders {HttpHeaders}
      * @returns {HttpHeaders}
      */
-    public static addAuthTokenToHeaders(httpHeaders: HttpHeaders) : HttpHeaders {
-        return httpHeaders.set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+    public static addAuthTokenToHeaders(httpHeaders: HttpHeaders): HttpHeaders {
+        return httpHeaders.set('Authorization', 'JWT ' + localStorage.getItem('token'));
     }
 
     /**
@@ -86,7 +86,7 @@ export class AuthService {
         let user = new User();
 
         if (decodedToken) {
-            user.name = 'name' in decodedToken ? String(decodedToken.name) : '';
+            user.name = 'username' in decodedToken ? String(decodedToken.username) : '';
         }
 
         return user;

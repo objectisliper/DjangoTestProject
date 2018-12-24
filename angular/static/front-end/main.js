@@ -302,7 +302,7 @@ var LoginComponent = /** @class */ (function () {
         /** Error message for unprocessed statuses */
         this.commonErrorMessage = 'Something went wrong. Please contact support.';
         this.user = new _models_user_model__WEBPACK_IMPORTED_MODULE_3__["User"]();
-        this.user.email = '';
+        this.user.name = '';
         this.user.password = '';
     }
     LoginComponent.prototype.ngOnInit = function () {
@@ -430,7 +430,7 @@ var AuthService = /** @class */ (function () {
      * @returns {HttpHeaders}
      */
     AuthService.addAuthTokenToHeaders = function (httpHeaders) {
-        return httpHeaders.set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+        return httpHeaders.set('Authorization', 'JWT ' + localStorage.getItem('token'));
     };
     /**
      * Get auth token
@@ -456,7 +456,7 @@ var AuthService = /** @class */ (function () {
         var decodedToken = this.jwtHelper.decodeToken(localStorage.getItem('token'));
         var user = new _models_user_model__WEBPACK_IMPORTED_MODULE_3__["User"]();
         if (decodedToken) {
-            user.name = 'name' in decodedToken ? String(decodedToken.name) : '';
+            user.name = 'username' in decodedToken ? String(decodedToken.username) : '';
         }
         return user;
     };

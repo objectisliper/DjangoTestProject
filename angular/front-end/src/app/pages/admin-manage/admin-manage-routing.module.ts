@@ -3,16 +3,13 @@ import { CommonModule } from '@angular/common';
 import {Routes, RouterModule} from '@angular/router';
 import {DashboardsComponent} from './dashboards/dashboards.component';
 import {AdminComponent} from '../../layout/admin/admin.component';
+import {SettingsComponent} from './settings/settings.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
     children: [
-        {
-          path: '**',
-          redirectTo: 'dashboards',
-        },
         {
           path: '',
           redirectTo: 'dashboards',
@@ -22,7 +19,12 @@ const routes: Routes = [
           path: 'dashboards',
           component: DashboardsComponent,
           pathMatch: 'full',
-        }
+        },
+        {
+          path: 'settings',
+          component: SettingsComponent,
+          pathMatch: 'full',
+        },
     ]
   }
 ];
