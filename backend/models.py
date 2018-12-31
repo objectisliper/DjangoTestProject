@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 
 class TrelloTokens(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     api_key = models.CharField(max_length=200)
     token = models.CharField(max_length=200)
     expiration_date = models.DateTimeField(default=timezone.now)

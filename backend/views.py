@@ -22,6 +22,14 @@ def test(request):
 class TrelloTokensApi(APIView):
 
     def get(self, request):
-        tokens = TrelloTokens.objects.filter(user_id=request.user.id)
-        serialized_tokens = TrelloTokensSerializers(tokens, many=True)
+        tokens = TrelloTokens.objects.filter(user_id=request.user.id).first()
+        serialized_tokens = TrelloTokensSerializers(tokens)
+        return Response({"data": serialized_tokens.data})
+
+    def put(self, request):
+        tokens, is_created = TrelloTokens.objects.update_or_create(
+                                        user_id=request.user.id,
+                                        defaults={'token': request.data['token'],
+                                                  'api_key': request.data['api_key']})
+        serialized_tokens = TrelloTokensSerializers(tokens)
         return Response({"data": serialized_tokens.data})

@@ -252,7 +252,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card mb-3\">\n  <div class=\"card-header\">Api key & Token for Trello</div>\n  <div class=\"card-body\">\n    <form>\n      <div class=\"form-group\">\n        <label>Api key\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"tokens.api_key\" name=\"api_key\" required style=\"width: 250%;\">\n        </label>\n      </div>\n      <div class=\"form-group\">\n        <label>Token\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"tokens.token\" name=\"token\" required style=\"width: 250%;\">\n        </label>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"card mb-3\">\n  <div class=\"card-header\">Api key & Token for Trello</div>\n  <div class=\"card-body\">\n    <form (ngSubmit)=\"submit()\">\n      <div class=\"form-group\">\n        <label>Api key\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"tokens.api_key\" name=\"api_key\" required style=\"width: 250%;\">\n        </label>\n      </div>\n      <div class=\"form-group\">\n        <label>Token\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"tokens.token\" name=\"token\" required style=\"width: 250%;\">\n        </label>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -284,9 +284,17 @@ var SettingsComponent = /** @class */ (function () {
         var _this = this;
         this.tokensService.getTokens().subscribe(function (data) {
             if (data) {
-                console.log(data);
-                _this.tokens.api_key = data[0]['api_key'];
-                _this.tokens.token = data[0]['token'];
+                _this.tokens.api_key = data['api_key'];
+                _this.tokens.token = data['token'];
+            }
+        });
+    };
+    SettingsComponent.prototype.submit = function () {
+        var _this = this;
+        this.tokensService.updateOrCreateTokens(this.tokens.api_key, this.tokens.token).subscribe(function (data) {
+            if (data) {
+                _this.tokens.api_key = data['api_key'];
+                _this.tokens.token = data['token'];
             }
         });
     };
@@ -337,6 +345,21 @@ var TokensService = /** @class */ (function () {
                 'Authorization': 'JWT ' + localStorage.getItem('token') })
         };
         return this.http.get('/api/get_tokens', options)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
+            if (response['data']) {
+                return response['data'];
+            }
+            return false;
+        }));
+    };
+    TokensService.prototype.updateOrCreateTokens = function (api_key, token) {
+        var options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json',
+                'X-CSRFToken': this.cookieService.get('csrftoken'),
+                'Authorization': 'JWT ' + localStorage.getItem('token') })
+        };
+        var body = JSON.stringify({ api_key: api_key, token: token });
+        return this.http.put('/api/get_tokens', body, options)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
             if (response['data']) {
                 return response['data'];
