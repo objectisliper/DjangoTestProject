@@ -18,9 +18,17 @@ export class SettingsComponent implements OnInit {
   ngOnInit() {
     this.tokensService.getTokens().subscribe(data => {
       if (data) {
-        console.log(data);
-        this.tokens.api_key = data[0]['api_key'];
-        this.tokens.token = data[0]['token'];
+        this.tokens.api_key = data['api_key'];
+        this.tokens.token = data['token'];
+      }
+    });
+  }
+
+  submit() {
+    this.tokensService.updateOrCreateTokens(this.tokens.api_key, this.tokens.token).subscribe(data => {
+      if (data) {
+        this.tokens.api_key = data['api_key'];
+        this.tokens.token = data['token'];
       }
     });
   }
