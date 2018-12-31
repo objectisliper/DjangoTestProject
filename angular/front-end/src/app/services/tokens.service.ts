@@ -29,4 +29,24 @@ export class TokensService {
         })
       );
   }
+
+  public updateOrCreateTokens(api_key, token): Observable<any>{
+    let options = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json',
+        'X-CSRFToken': this.cookieService.get('csrftoken'),
+        'Authorization': 'JWT ' + localStorage.getItem('token')})
+    };
+
+    let body = JSON.stringify({api_key: api_key, token: token});
+
+    return this.http.put('/api/get_tokens', body, options)
+      .pipe( map(response => {
+          if (response['data']) {
+            return response['data'];
+          }
+
+          return false;
+        })
+      );
+  }
 }
