@@ -148,3 +148,10 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': timedelta(seconds=3600),
 }
 
+CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+CELERY_RESULT_BACKEND = 'amqp://guest:guest@localhost:5672/'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_BEAT_SCHEDULE = {}
+timezone = 'Europe/London'

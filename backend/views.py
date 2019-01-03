@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from trello import TrelloClient, create_oauth_token
+from trello import TrelloClient
 from django.http import HttpResponse
 from backend.models import TrelloTokens
 from rest_framework.response import Response
@@ -9,13 +9,19 @@ from .serializers import TrelloTokensSerializers
 
 
 def test(request):
-    api_key, api_secret = TrelloTokens.objects.get(user_id=1).get_tokens()
-    token = create_oauth_token("never", key=api_key, secret=api_secret)
+    api_key, token = TrelloTokens.objects.get(user_id=1).get_tokens()
     client = TrelloClient(
         api_key=api_key,
-        token="30c8f43af482cff82773cf55a8a75e75711fde453fc2de1b2644be7ebf1ffb64"
+        token=token
     )
     all_boards = client.list_boards()
+    lists = []
+    identifiers = []
+    for board in all_boards:
+        lists.append(board.list_lists())
+    for lists_from_api in lists:
+        for list_from_api in lists_from_api:
+            identifiers.append(list_from_api.id)
     return HttpResponse('test')
 
 
