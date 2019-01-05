@@ -1,9 +1,32 @@
 from rest_framework import serializers
-from .models import TrelloTokens
+from .models import *
 
 
-class TrelloTokensSerializers(serializers.ModelSerializer):
+class TrelloTokensSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TrelloTokens
         fields = ["api_key", "token"]
+
+
+class CardsSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Cards
+        fields = ["token", "name"]
+
+
+class ListsSerializer(serializers.ModelSerializer):
+    cards_set = CardsSerializer(many=True)
+
+    class Meta:
+        model = Lists
+        fields = ["token", "name", "cards_set"]
+
+
+class DashboardsSerializer(serializers.ModelSerializer):
+    lists_set = ListsSerializer(many=True)
+
+    class Meta:
+        model = Dashboards
+        fields = ["token", "name", "lists_set"]

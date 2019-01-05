@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 from datetime import timedelta
+from celery.schedules import crontab
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -153,5 +154,10 @@ CELERY_RESULT_BACKEND = 'amqp://guest:guest@localhost:5672/'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
-CELERY_BEAT_SCHEDULE = {}
 timezone = 'Europe/London'
+CELERY_BEAT_SCHEDULE = {
+    'scrub_tokens_and_start_api_requests': {
+        'task': 'app1.tasks.task_number_one',
+        'schedule': crontab(minute=59, hour=23)
+    }
+}
