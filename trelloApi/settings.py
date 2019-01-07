@@ -157,7 +157,7 @@ CELERY_TASK_SERIALIZER = 'json'
 timezone = 'Europe/London'
 CELERY_BEAT_SCHEDULE = {
     'scrub_tokens_and_start_api_requests': {
-        'task': 'app1.tasks.task_number_one',
-        'schedule': crontab(minute=59, hour=23)
+        'task': 'backend.tasks.scrub_tokens_and_start_api_requests',
+        'schedule': crontab(minute=5)
     }
 }

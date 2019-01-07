@@ -185,7 +185,7 @@ var AdminManageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluLW1hbmFnZS9kYXNoYm9hcmRzL2Rhc2hib2FyZHMuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = ".boards-page-board-section-list {\n  display: flex;\n  flex-wrap: wrap;\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.boards-page-board-section-list-item {\n  width: 23.5%;\n  padding: 0;\n  margin: 0 2% 8px 0;\n  box-sizing: border-box;\n  position: relative;\n}\n\n.boards-page-board-section-list-item:nth-of-type(4n) {\n  margin-right: 0;\n}\n\n.board-tile {\n  background-color: rgb(0, 121, 191);\n  background-size: cover;\n  background-position: 50%;\n  color: #fff;\n  line-height: 20px;\n  margin: 0 8px 8px 0;\n  padding: 8px;\n  position: relative;\n  text-decoration: none;\n  border-radius: 3px;\n  display: block;\n}\n\n.board-tile:hover {\n  background-color: rgb(0, 91, 144);\n}\n\n.board-tile-details {\n  display: flex;\n  height: 80px;\n  position: relative;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.board-tile-details-name {\n  flex: 0 0 auto;\n  font-size: 16px;\n  font-weight: 700;\n  display: inline-block;\n  overflow: hidden;\n  max-height: 40px;\n  width: 100%;\n  word-wrap: break-word;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYWRtaW4tbWFuYWdlL2Rhc2hib2FyZHMvZGFzaGJvYXJkcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsVUFBVTtFQUNWLFdBQVc7Q0FDWjs7QUFFRDtFQUNFLGFBQWE7RUFDYixXQUFXO0VBQ1gsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QixtQkFBbUI7Q0FDcEI7O0FBR0Q7RUFDRSxnQkFBZ0I7Q0FDakI7O0FBRUQ7RUFDRSxtQ0FBbUM7RUFDbkMsdUJBQXVCO0VBQ3ZCLHlCQUF5QjtFQUN6QixZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLG9CQUFvQjtFQUNwQixhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHNCQUFzQjtFQUN0QixtQkFBbUI7RUFDbkIsZUFBZTtDQUNoQjs7QUFFRDtFQUNFLGtDQUFrQztDQUNuQzs7QUFFRDtFQUNFLGNBQWM7RUFDZCxhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QiwrQkFBK0I7Q0FDaEM7O0FBRUQ7RUFDRSxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtFQUNqQixzQkFBc0I7RUFDdEIsaUJBQWlCO0VBQ2pCLGlCQUFpQjtFQUNqQixZQUFZO0VBQ1osc0JBQXNCO0NBQ3ZCIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvYWRtaW4tbWFuYWdlL2Rhc2hib2FyZHMvZGFzaGJvYXJkcy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJvYXJkcy1wYWdlLWJvYXJkLXNlY3Rpb24tbGlzdCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtd3JhcDogd3JhcDtcbiAgbGlzdC1zdHlsZTogbm9uZTtcbiAgbWFyZ2luOiAwO1xuICBwYWRkaW5nOiAwO1xufVxuXG4uYm9hcmRzLXBhZ2UtYm9hcmQtc2VjdGlvbi1saXN0LWl0ZW0ge1xuICB3aWR0aDogMjMuNSU7XG4gIHBhZGRpbmc6IDA7XG4gIG1hcmdpbjogMCAyJSA4cHggMDtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuXG5cbi5ib2FyZHMtcGFnZS1ib2FyZC1zZWN0aW9uLWxpc3QtaXRlbTpudGgtb2YtdHlwZSg0bikge1xuICBtYXJnaW4tcmlnaHQ6IDA7XG59XG5cbi5ib2FyZC10aWxlIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsIDEyMSwgMTkxKTtcbiAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgYmFja2dyb3VuZC1wb3NpdGlvbjogNTAlO1xuICBjb2xvcjogI2ZmZjtcbiAgbGluZS1oZWlnaHQ6IDIwcHg7XG4gIG1hcmdpbjogMCA4cHggOHB4IDA7XG4gIHBhZGRpbmc6IDhweDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgZGlzcGxheTogYmxvY2s7XG59XG5cbi5ib2FyZC10aWxlOmhvdmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsIDkxLCAxNDQpO1xufVxuXG4uYm9hcmQtdGlsZS1kZXRhaWxzIHtcbiAgZGlzcGxheTogZmxleDtcbiAgaGVpZ2h0OiA4MHB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLmJvYXJkLXRpbGUtZGV0YWlscy1uYW1lIHtcbiAgZmxleDogMCAwIGF1dG87XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgZm9udC13ZWlnaHQ6IDcwMDtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBtYXgtaGVpZ2h0OiA0MHB4O1xuICB3aWR0aDogMTAwJTtcbiAgd29yZC13cmFwOiBicmVhay13b3JkO1xufVxuIl19 */"
 
 /***/ }),
 
@@ -196,7 +196,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n<ul class=\"boards-page-board-section-list\" *ngIf=\"dashboards\">\n  <li class=\"boards-page-board-section-list-item\" *ngFor=\"let dashboard of dashboards\">\n    <a href=\"#\" class=\"board-tile\">\n      <div class=\"board-tile-details\">\n        <div class=\"board-tile-details-name\">{{ dashboard.name }}</div>\n      </div>\n    </a>\n  </li>\n</ul>\n"
 
 /***/ }),
 
@@ -212,12 +212,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardsComponent", function() { return DashboardsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_dashboards_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/dashboards.service */ "./src/app/services/dashboards.service.ts");
+
 
 
 var DashboardsComponent = /** @class */ (function () {
-    function DashboardsComponent() {
+    function DashboardsComponent(dashboardsService) {
+        this.dashboardsService = dashboardsService;
     }
     DashboardsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.dashboardsService.getDashboards().subscribe(function (data) {
+            if (data) {
+                _this.dashboards = data;
+            }
+        });
     };
     DashboardsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -225,7 +234,7 @@ var DashboardsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./dashboards.component.html */ "./src/app/pages/admin-manage/dashboards/dashboards.component.html"),
             styles: [__webpack_require__(/*! ./dashboards.component.css */ "./src/app/pages/admin-manage/dashboards/dashboards.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_dashboards_service__WEBPACK_IMPORTED_MODULE_2__["DashboardsService"]])
     ], DashboardsComponent);
     return DashboardsComponent;
 }());
@@ -313,6 +322,58 @@ var SettingsComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/dashboards.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/services/dashboards.service.ts ***!
+  \************************************************/
+/*! exports provided: DashboardsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardsService", function() { return DashboardsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/index.js");
+
+
+
+
+
+var DashboardsService = /** @class */ (function () {
+    function DashboardsService(cookieService, http) {
+        this.cookieService = cookieService;
+        this.http = http;
+    }
+    DashboardsService.prototype.getDashboards = function () {
+        var options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json',
+                'X-CSRFToken': this.cookieService.get('csrftoken'),
+                'Authorization': 'JWT ' + localStorage.getItem('token') })
+        };
+        return this.http.get('/api/dashboards', options)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
+            if (response['data']) {
+                return response['data'];
+            }
+            return false;
+        }));
+    };
+    DashboardsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], DashboardsService);
+    return DashboardsService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/tokens.service.ts":
 /*!********************************************!*\
   !*** ./src/app/services/tokens.service.ts ***!
@@ -344,7 +405,7 @@ var TokensService = /** @class */ (function () {
                 'X-CSRFToken': this.cookieService.get('csrftoken'),
                 'Authorization': 'JWT ' + localStorage.getItem('token') })
         };
-        return this.http.get('/api/get_tokens', options)
+        return this.http.get('/api/tokens', options)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
             if (response['data']) {
                 return response['data'];
@@ -359,7 +420,7 @@ var TokensService = /** @class */ (function () {
                 'Authorization': 'JWT ' + localStorage.getItem('token') })
         };
         var body = JSON.stringify({ api_key: api_key, token: token });
-        return this.http.put('/api/get_tokens', body, options)
+        return this.http.put('/api/tokens', body, options)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
             if (response['data']) {
                 return response['data'];

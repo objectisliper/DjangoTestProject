@@ -1,0 +1,10 @@
+
+<ul class="boards-page-board-section-list" *ngIf="dashboards">
+  <li class="boards-page-board-section-list-item" *ngFor="let dashboard of dashboards">
+    <a href="#" class="board-tile">
+      <div class="board-tile-details">
+        <div class="board-tile-details-name">{{ dashboard.name }}</div>
+      </div>
+    </a>
+  </li>
+</ul>

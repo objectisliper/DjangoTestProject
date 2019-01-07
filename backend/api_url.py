@@ -6,5 +6,6 @@ from rest_framework_jwt.views import obtain_jwt_token
 urlpatterns = [
     path('test', test),
     path('login', obtain_jwt_token),
-    path('get_tokens', TrelloTokensApi.as_view())
+    path('tokens', TrelloTokensApi.as_view()),
+    path('dashboards', DashboardsApi.as_view())
 ]

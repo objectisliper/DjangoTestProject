@@ -1,9 +1,7 @@
-from django.shortcuts import render
 from trello import TrelloClient
 from django.http import HttpResponse
 from backend.models import *
 from rest_framework.response import Response
-from rest_framework import permissions
 from rest_framework.views import APIView
 from .serializers import TrelloTokensSerializer, DashboardsSerializer
 from .tasks import scrub_tokens_and_start_api_requests
@@ -43,3 +41,11 @@ class TrelloTokensApi(APIView):
                                                   'api_key': request.data['api_key']})
         serialized_tokens = TrelloTokensSerializer(tokens)
         return Response({"data": serialized_tokens.data})
+
+
+class DashboardsApi(APIView):
+
+    def get(self, request):
+        dashboards = Dashboards.objects.filter(user_id=request.user.id).select_related().all()
+        serialized_dashboards = DashboardsSerializer(dashboards, many=True)
+        return Response({"data": serialized_dashboards.data})

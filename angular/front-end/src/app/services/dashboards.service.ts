@@ -8,38 +8,18 @@ import {Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class TokensService {
+export class DashboardsService {
 
   constructor(private cookieService: CookieService, private http: HttpClient) { }
 
-  public getTokens(): Observable<any> {
+  public getDashboards(): Observable<any> {
     let options = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json',
         'X-CSRFToken': this.cookieService.get('csrftoken'),
         'Authorization': 'JWT ' + localStorage.getItem('token')})
     };
 
-    return this.http.get('/api/tokens', options)
-      .pipe( map(response => {
-        if (response['data']) {
-          return response['data'];
-        }
-
-        return false;
-        })
-      );
-  }
-
-  public updateOrCreateTokens(api_key, token): Observable<any>{
-    let options = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json',
-        'X-CSRFToken': this.cookieService.get('csrftoken'),
-        'Authorization': 'JWT ' + localStorage.getItem('token')})
-    };
-
-    let body = JSON.stringify({api_key: api_key, token: token});
-
-    return this.http.put('/api/tokens', body, options)
+    return this.http.get('/api/dashboards', options)
       .pipe( map(response => {
           if (response['data']) {
             return response['data'];
