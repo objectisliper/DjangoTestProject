@@ -30,7 +30,6 @@ export class AuthService {
 
         return this.http.post('/api/login', body, options)
           .pipe( map(response => {
-                console.log(response['token']);
                 if (response['token']) {
                     localStorage.setItem('token', response['token']);
                     return true;
