@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from backend.models import *
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import TrelloTokensSerializer, DashboardsSerializer
-from .tasks import scrub_tokens_and_start_api_requests
+from .serializers import TrelloTokensSerializer, DashboardsSerializer, CardsSerializer
+from .tasks import scrub_tokens_and_start_api_requests, update_card
 
 
 def test(request):
@@ -49,3 +49,11 @@ class DashboardsApi(APIView):
         dashboards = Dashboards.objects.filter(user_id=request.user.id).select_related().all()
         serialized_dashboards = DashboardsSerializer(dashboards, many=True)
         return Response({"data": serialized_dashboards.data})
+
+    def put(self, request):
+        tokens = TrelloTokens.objects.filter(user_id=request.user.id).first()
+        update_card.delay(tokens.api_key, tokens.token, request.data['token'], request.data['name'],
+                          request.data['description'])
+        Cards.objects.filter(token=request.data['token']).update(name=request.data['name'],
+                                                                 description=request.data['description'])
+        return Response({"success": True})

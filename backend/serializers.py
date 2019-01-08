@@ -13,7 +13,7 @@ class CardsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Cards
-        fields = ["token", "name"]
+        fields = ["token", "name", "description"]
 
 
 class ListsSerializer(serializers.ModelSerializer):
@@ -21,7 +21,7 @@ class ListsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lists
-        fields = ["token", "name", "cards_set"]
+        fields = ["name", "cards_set"]
 
 
 class DashboardsSerializer(serializers.ModelSerializer):

@@ -1,0 +1,52 @@
+<div class="board-main-content">
+  <button class="btn btn-primary" (click)="goBack()" style="width: 120px;margin-left: 8px;margin-bottom: 10px;">Dashboards</button>
+  <div class="board-name">Board: {{dashboard.name}}</div>
+  <div class="board-canvas">
+    <div id="board" *ngIf="dashboard">
+      <div class="list-wrapper" *ngFor="let list of dashboard.lists_set">
+        <div class="list">
+          <div class="list-header">
+            <h2 class="list-header-name">
+              {{list.name}}
+            </h2>
+          </div>
+          <div class="list-cards" *ngIf="list.cards_set">
+            <div (click)="open(content, card)" class="list-card" *ngFor="let card of list.cards_set">
+              <div class="list-card-details">
+                <div class="list-card-title">
+                  {{card.name}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{chosen_card.token}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="name">Task name</label>
+        <div class="input-group">
+          <input id="name" class="form-control" name="name" [(ngModel)]="chosen_card.name">
+        </div>
+        <label for="description">Task Description</label>
+        <div class="input-group">
+          <input id="description" class="form-control" name="description" [(ngModel)]="chosen_card.description">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>

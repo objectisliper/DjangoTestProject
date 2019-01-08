@@ -150,14 +150,15 @@ JWT_AUTH = {
 }
 
 CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672/'
-CELERY_RESULT_BACKEND = 'amqp://guest:guest@localhost:5672/'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
-timezone = 'Europe/London'
+CELERY_TIMEZONE = 'UTC'
+CELERY_ENABLE_UTC = True
 CELERY_BEAT_SCHEDULE = {
     'scrub_tokens_and_start_api_requests': {
         'task': 'backend.tasks.scrub_tokens_and_start_api_requests',
-        'schedule': crontab(minute=5)
+        'schedule': 60,
+        'options': {'queue': 'api_requests_periodic'}
     }
 }

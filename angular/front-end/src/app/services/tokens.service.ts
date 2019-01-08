@@ -13,7 +13,7 @@ export class TokensService {
   constructor(private cookieService: CookieService, private http: HttpClient) { }
 
   public getTokens(): Observable<any> {
-    let options = {
+    const options = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json',
         'X-CSRFToken': this.cookieService.get('csrftoken'),
         'Authorization': 'JWT ' + localStorage.getItem('token')})
@@ -31,13 +31,13 @@ export class TokensService {
   }
 
   public updateOrCreateTokens(api_key, token): Observable<any>{
-    let options = {
+    const options = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json',
         'X-CSRFToken': this.cookieService.get('csrftoken'),
         'Authorization': 'JWT ' + localStorage.getItem('token')})
     };
 
-    let body = JSON.stringify({api_key: api_key, token: token});
+    const body = JSON.stringify({api_key: api_key, token: token});
 
     return this.http.put('/api/tokens', body, options)
       .pipe( map(response => {

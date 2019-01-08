@@ -4,6 +4,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {DashboardsComponent} from './dashboards/dashboards.component';
 import {AdminComponent} from '../../layout/admin/admin.component';
 import {SettingsComponent} from './settings/settings.component';
+import {DashboardListComponent} from './dashboard-list/dashboard-list.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
           path: 'settings',
           component: SettingsComponent,
           pathMatch: 'full',
+        },
+        {
+          path: 'dashboard-list/:token',
+          component: DashboardListComponent,
         },
     ]
   }

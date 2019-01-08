@@ -5,17 +5,21 @@ import {AdminManageRoutingModule} from './admin-manage-routing.module';
 import { AdminComponent } from '../../layout/admin/admin.component';
 import {FormsModule} from '@angular/forms';
 import { SettingsComponent } from './settings/settings.component';
+import { DashboardListComponent } from './dashboard-list/dashboard-list.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     DashboardsComponent,
     AdminComponent,
-    SettingsComponent
+    SettingsComponent,
+    DashboardListComponent
   ],
   imports: [
     CommonModule,
     AdminManageRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ]
 })
 export class AdminManageModule { }

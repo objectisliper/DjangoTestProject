@@ -24,4 +24,5 @@ urlpatterns = [
     path('<path>', index),
     re_path(r'^api/', include(api_url)),
     path('<path>/<path2>', index),
+    path('<path>/<path2>/<path3>', index),
 ]

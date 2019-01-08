@@ -5,9 +5,15 @@ from trello import TrelloClient
 from django.db import transaction
 
 
-@task()
-def task_number_one():
-    return 'test'
+@task(queue='update_card')
+def update_card(api_key, api_token, card_id, name, description):
+    client = TrelloClient(
+        api_key=api_key,
+        token=api_token
+    )
+    card = client.get_card(card_id)
+    card.set_name(name)
+    card.set_description(description)
 
 
 @task()
@@ -18,7 +24,7 @@ def scrub_tokens_and_start_api_requests():
     return True
 
 
-@task()
+@task(queue='api_scrubs')
 def get_all_from_trello_api(user_id, api_key, api_token):
     client = TrelloClient(
         api_key=api_key,
