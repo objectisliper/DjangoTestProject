@@ -19,7 +19,6 @@ from angular.views import index
 from backend.api_url import urlpatterns as api_url
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
     path('', index),
     path('<path>', index),
     re_path(r'^api/', include(api_url)),

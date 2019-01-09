@@ -58,7 +58,7 @@ export class DashboardsService {
 
     const body = JSON.stringify({token: card.token, name: card.name, description: card.description});
 
-    return this.http.put('/api/dashboards', body, options)
+    return this.http.put('/api/cards', body, options)
       .pipe( map(response => {
         return !!response['success'];
       }));
