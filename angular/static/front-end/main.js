@@ -409,7 +409,6 @@ var AuthService = /** @class */ (function () {
         var body = JSON.stringify({ username: username, password: password });
         return this.http.post('/api/login', body, options)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(function (response) {
-            console.log(response['token']);
             if (response['token']) {
                 localStorage.setItem('token', response['token']);
                 return true;
