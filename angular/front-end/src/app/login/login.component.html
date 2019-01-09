@@ -12,7 +12,7 @@
                             </div>
 
                             <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Your Email Address" name="email"
+                                <input type="text" class="form-control" placeholder="Your Nicname" name="name"
                                        [(ngModel)]="user.name" required>
                                 <span class="md-line"></span>
                             </div>
@@ -35,6 +35,14 @@
                                         Sign in
                                     </button>
                                 </div>
+                            </div>
+                            <div class="row m-t-30">
+                              <div class="col-md-12">
+                                <button routerLink="/register" style="margin-top: 50px;"
+                                        class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">
+                                  Sign up
+                                </button>
+                              </div>
                             </div>
                         </div>
                     </form>

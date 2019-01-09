@@ -11735,7 +11735,7 @@ var DashboardsService = /** @class */ (function () {
                 'Authorization': 'JWT ' + localStorage.getItem('token') })
         };
         var body = JSON.stringify({ token: card.token, name: card.name, description: card.description });
-        return this.http.put('/api/dashboards', body, options)
+        return this.http.put('/api/cards', body, options)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
             return !!response['success'];
         }));

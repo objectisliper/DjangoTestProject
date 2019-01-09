@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 
 import {User} from "../models/user.model";
 import { JwtHelperService } from "@auth0/angular-jwt";
-import {ServerResponseInterface} from "../interfaces/server-response-interface";
 import {map} from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
 
