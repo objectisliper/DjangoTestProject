@@ -30,3 +30,10 @@ class DashboardsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dashboards
         fields = ["token", "name", "lists_set"]
+
+
+class UserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ['email', 'username', 'password']

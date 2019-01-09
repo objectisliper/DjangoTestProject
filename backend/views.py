@@ -1,10 +1,9 @@
-from trello import TrelloClient
-from django.http import HttpResponse
 from backend.models import *
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from rest_framework.views import APIView
-from .serializers import TrelloTokensSerializer, DashboardsSerializer, CardsSerializer
-from .tasks import scrub_tokens_and_start_api_requests, update_card
+from rest_framework.views import APIView, status
+from .serializers import TrelloTokensSerializer, DashboardsSerializer, UserSerializer
+from .tasks import update_card
 
 
 class TrelloTokensApi(APIView):
@@ -40,3 +39,19 @@ class CardsApi(APIView):
         Cards.objects.filter(token=request.data['token']).update(name=request.data['name'],
                                                                  description=request.data['description'])
         return Response({"success": True})
+
+
+class UserApi(APIView):
+    permission_classes = (AllowAny,)
+
+    def post(self, request):
+        serialized = UserSerializer(data=request.data)
+        if serialized.is_valid():
+            User.objects.create_user(
+                email=serialized.data['email'],
+                username=serialized.data['username'],
+                password=serialized.data['password']
+            )
+            return Response({"data": serialized.data, "status": status.HTTP_201_CREATED})
+        else:
+            return Response({"errors": serialized._errors, "status": status.HTTP_400_BAD_REQUEST})
