@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 from datetime import timedelta
-from celery.schedules import crontab
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -155,10 +154,4 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'
 CELERY_ENABLE_UTC = True
-CELERY_BEAT_SCHEDULE = {
-    'scrub_tokens_and_start_api_requests': {
-        'task': 'backend.tasks.scrub_tokens_and_start_api_requests',
-        'schedule': 60,
-        'options': {'queue': 'api_requests_periodic'}
-    }
-}
+

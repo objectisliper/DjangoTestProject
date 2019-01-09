@@ -1,8 +1,9 @@
 from __future__ import absolute_import, unicode_literals
-from celery import task
+from celery.task import task, periodic_task
 from .models import TrelloTokens, Dashboards, Lists, Cards
 from trello import TrelloClient
 from django.db import transaction
+from celery.schedules import crontab
 
 
 @task(queue='update_card')
@@ -16,7 +17,7 @@ def update_card(api_key, api_token, card_id, name, description):
     card.set_description(description)
 
 
-@task()
+@periodic_task(run_every=300, queue='api_requests_periodic', name='api_requests_periodic')
 def scrub_tokens_and_start_api_requests():
     tokens = TrelloTokens.objects.all()
     for token in tokens:
