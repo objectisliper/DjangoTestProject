@@ -10,27 +10,23 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os
+import environ
 from datetime import timedelta
+root = environ.Path(__file__) - 3
+env = environ.Env(DEBUG=(bool, False),)
+env.read_env('.env')
 
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SECRET_KEY = env('SECRET_KEY')
 
+SITE_ROOT = root()
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
+DEBUG = env('DEBUG')
+TEMPLATE_DEBUG = DEBUG
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*u44ye!bv+3ophz&bw-3t#bs(tw8p=@)_!^k25_h%@3jj)9i=p'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -75,23 +71,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'trelloApi.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'testWorkDjango',
-        'USER': 'root',
-        'PASSWORD': 'dev',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
+    'default': env.db()
+
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -109,9 +93,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/2.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -123,14 +104,8 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
-
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
@@ -149,7 +124,7 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': timedelta(seconds=3600),
 }
 
-CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+CELERY_BROKER_URL = env('CELERY_BROKER_URL')
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
