@@ -50,6 +50,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
+
 
 
 
@@ -75,6 +77,11 @@ var routes = [
             breadcrumb: 'Login',
             status: false
         }
+    },
+    {
+        path: 'register',
+        component: _register_register_component__WEBPACK_IMPORTED_MODULE_5__["RegisterComponent"],
+        pathMatch: 'full',
     },
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -169,6 +176,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/index.js");
 /* harmony import */ var angular_datatables__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! angular-datatables */ "./node_modules/angular-datatables/index.js");
+/* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
+
 
 
 
@@ -189,6 +198,7 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
                 _login_login_component__WEBPACK_IMPORTED_MODULE_5__["LoginComponent"],
+                _register_register_component__WEBPACK_IMPORTED_MODULE_12__["RegisterComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -271,7 +281,7 @@ module.exports = ".login-card h3 {\n    margin-top: 10px;\n}\n\n/*# sourceMappin
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"login p-fixed d-flex text-center common-img-bg justify-content-center\" style=\"height: 100vh;\">\n    <div class=\"auth-fluid d-flex align-items-center\">\n        <div class=\"row\">\n            <div class=\"col-sm-12\">\n                <div class=\"login-card card-body auth-body\">\n                    <form class=\"md-float-material\" #loginForm=\"ngForm\" (ngSubmit)=\"submit()\"  (keyup)=\"userStartInput()\">\n                        <div class=\"auth-box\">\n                            <div class=\"row m-b-20\">\n                                <div class=\"col-md-12\">\n                                    <h3 class=\"text-center txt-primary\">Sign In</h3>\n                                </div>\n                            </div>\n\n                            <div class=\"input-group\">\n                                <input type=\"email\" class=\"form-control\" placeholder=\"Your Email Address\" name=\"email\"\n                                       [(ngModel)]=\"user.name\" required>\n                                <span class=\"md-line\"></span>\n                            </div>\n\n                            <div class=\"input-group\">\n                                <input type=\"password\" class=\"form-control\" placeholder=\"Password\" name=\"password\"\n                                       [(ngModel)]=\"user.password\" required>\n                                <span class=\"md-line\"></span>\n                            </div>\n\n                            <div class=\"col-md-12 form-txt-danger\" *ngIf=\"errorMessage\">\n                                {{ errorMessage }}\n                            </div>\n\n                            <div class=\"row m-t-30\">\n                                <div class=\"col-md-12\">\n                                    <button type=\"submit\" [disabled]=\"!loginForm.form.valid\"\n                                            class=\"btn btn-primary btn-md btn-block waves-effect text-center m-b-20\"\n                                    >\n                                        Sign in\n                                    </button>\n                                </div>\n                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>\n"
+module.exports = "<section class=\"login p-fixed d-flex text-center common-img-bg justify-content-center\" style=\"height: 100vh;\">\n    <div class=\"auth-fluid d-flex align-items-center\">\n        <div class=\"row\">\n            <div class=\"col-sm-12\">\n                <div class=\"login-card card-body auth-body\">\n                    <form class=\"md-float-material\" #loginForm=\"ngForm\" (ngSubmit)=\"submit()\"  (keyup)=\"userStartInput()\">\n                        <div class=\"auth-box\">\n                            <div class=\"row m-b-20\">\n                                <div class=\"col-md-12\">\n                                    <h3 class=\"text-center txt-primary\">Sign In</h3>\n                                </div>\n                            </div>\n\n                            <div class=\"input-group\">\n                                <input type=\"text\" class=\"form-control\" placeholder=\"Your Nicname\" name=\"name\"\n                                       [(ngModel)]=\"user.name\" required>\n                                <span class=\"md-line\"></span>\n                            </div>\n\n                            <div class=\"input-group\">\n                                <input type=\"password\" class=\"form-control\" placeholder=\"Password\" name=\"password\"\n                                       [(ngModel)]=\"user.password\" required>\n                                <span class=\"md-line\"></span>\n                            </div>\n\n                            <div class=\"col-md-12 form-txt-danger\" *ngIf=\"errorMessage\">\n                                {{ errorMessage }}\n                            </div>\n\n                            <div class=\"row m-t-30\">\n                                <div class=\"col-md-12\">\n                                    <button type=\"submit\" [disabled]=\"!loginForm.form.valid\"\n                                            class=\"btn btn-primary btn-md btn-block waves-effect text-center m-b-20\"\n                                    >\n                                        Sign in\n                                    </button>\n                                </div>\n                            </div>\n                            <div class=\"row m-t-30\">\n                              <div class=\"col-md-12\">\n                                <button routerLink=\"/register\" style=\"margin-top: 50px;\"\n                                        class=\"btn btn-primary btn-md btn-block waves-effect text-center m-b-20\">\n                                  Sign up\n                                </button>\n                              </div>\n                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>\n"
 
 /***/ }),
 
@@ -361,6 +371,108 @@ var User = /** @class */ (function () {
     function User() {
     }
     return User;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/register/register.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/register/register.component.css ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JlZ2lzdGVyL3JlZ2lzdGVyLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/register/register.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/register/register.component.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section class=\"login p-fixed d-flex text-center common-img-bg justify-content-center\" style=\"height: 100vh;\">\n  <div class=\"auth-fluid d-flex align-items-center\">\n    <div class=\"row\">\n      <div class=\"col-sm-12\">\n        <div class=\"login-card card-body auth-body\">\n          <form class=\"md-float-material\" #registerForm=\"ngForm\" (ngSubmit)=\"submit()\"  (keyup)=\"userStartInput()\">\n            <div class=\"auth-box\">\n              <div class=\"row m-b-20\">\n                <div class=\"col-md-12\">\n                  <h3 class=\"text-center txt-primary\">Sign up</h3>\n                </div>\n              </div>\n\n              <div class=\"input-group\">\n                <input type=\"email\" class=\"form-control\" placeholder=\"Your Email Address\" name=\"email\"\n                       [(ngModel)]=\"user.email\" required>\n                <span class=\"md-line\"></span>\n              </div>\n\n              <div class=\"input-group\">\n                <input type=\"text\" class=\"form-control\" placeholder=\"Your Nickname\" name=\"name\"\n                       [(ngModel)]=\"user.name\" required>\n                <span class=\"md-line\"></span>\n              </div>\n\n              <div class=\"input-group\">\n                <input type=\"password\" class=\"form-control\" placeholder=\"Password\" name=\"password\"\n                       [(ngModel)]=\"user.password\" required>\n                <span class=\"md-line\"></span>\n              </div>\n\n              <div class=\"col-md-12 form-txt-danger\" *ngIf=\"errorMessage\">\n                {{ errorMessage }}\n              </div>\n\n              <div class=\"row m-t-30\">\n                <div class=\"col-md-12\">\n                  <button type=\"submit\" [disabled]=\"!registerForm.form.valid\"\n                          class=\"btn btn-primary btn-md btn-block waves-effect text-center m-b-20\"\n                  >\n                    Sign up\n                  </button>\n                </div>\n              </div>\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n"
+
+/***/ }),
+
+/***/ "./src/app/register/register.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/register/register.component.ts ***!
+  \************************************************/
+/*! exports provided: RegisterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterComponent", function() { return RegisterComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _models_user_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/user.model */ "./src/app/models/user.model.ts");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_register_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/register.service */ "./src/app/services/register.service.ts");
+
+
+
+
+
+
+var RegisterComponent = /** @class */ (function () {
+    function RegisterComponent(authService, router, registerService) {
+        this.authService = authService;
+        this.router = router;
+        this.registerService = registerService;
+        /** Error message for unprocessed statuses */
+        this.commonErrorMessage = 'Something went wrong. Please contact support.';
+        this.user = new _models_user_model__WEBPACK_IMPORTED_MODULE_2__["User"]();
+        this.user.name = '';
+        this.user.password = '';
+        this.user.email = '';
+    }
+    RegisterComponent.prototype.ngOnInit = function () {
+        this.authService.logout();
+    };
+    RegisterComponent.prototype.submit = function () {
+        var _this = this;
+        this.registerService.register(this.user.name, this.user.password, this.user.email).subscribe(function (response) { return _this.authService.login(response['data']['username'], response['data']['password']).subscribe(function (result) {
+            if (result === true) {
+                var user = _this.authService.getUser();
+                var startRoute = '';
+                _this.router.navigate([startRoute]);
+            }
+            else {
+                _this.errorMessage = _this.commonErrorMessage;
+            }
+        }, function (error) {
+            switch (error.status) {
+                case 400: return _this.errorMessage = 'Incorrect username and password combination';
+            }
+            _this.errorMessage = _this.commonErrorMessage;
+        }); }, function (error) {
+            switch (error.status) {
+                case 400: return _this.errorMessage = 'Something went wrong, maybe such user already exist?';
+                case 500: return _this.errorMessage = 'Something went wrong, maybe such user already exist?';
+            }
+            _this.errorMessage = _this.commonErrorMessage;
+        });
+    };
+    /** Removing error message when user start input again */
+    RegisterComponent.prototype.userStartInput = function () {
+        this.errorMessage = '';
+    };
+    RegisterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-register',
+            template: __webpack_require__(/*! ./register.component.html */ "./src/app/register/register.component.html"),
+            styles: [__webpack_require__(/*! ./register.component.css */ "./src/app/register/register.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _services_register_service__WEBPACK_IMPORTED_MODULE_5__["RegisterService"]])
+    ], RegisterComponent);
+    return RegisterComponent;
 }());
 
 
@@ -464,6 +576,58 @@ var AuthService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], ngx_cookie_service__WEBPACK_IMPORTED_MODULE_6__["CookieService"]])
     ], AuthService);
     return AuthService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/register.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/services/register.service.ts ***!
+  \**********************************************/
+/*! exports provided: RegisterService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterService", function() { return RegisterService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+
+
+
+
+
+
+var RegisterService = /** @class */ (function () {
+    function RegisterService(http, cookieService) {
+        this.http = http;
+        this.cookieService = cookieService;
+        this.jwtHelper = new _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_2__["JwtHelperService"]();
+    }
+    RegisterService.prototype.register = function (username, password, email) {
+        var options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({ 'Content-Type': 'application/json',
+                'X-CSRFToken': this.cookieService.get('csrftoken') })
+        };
+        var body = JSON.stringify({ username: username, password: password, email: email });
+        return this.http.post('/api/user', body, options)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(function (response) {
+            return response;
+        }));
+    };
+    RegisterService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"], ngx_cookie_service__WEBPACK_IMPORTED_MODULE_4__["CookieService"]])
+    ], RegisterService);
+    return RegisterService;
 }());
 
 
