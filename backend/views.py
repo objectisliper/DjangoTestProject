@@ -21,6 +21,11 @@ class TrelloTokensApi(APIView):
         serialized_tokens = TrelloTokensSerializer(tokens)
         return Response({"data": serialized_tokens.data})
 
+    def delete(self, request):
+        TrelloTokens.objects.filter(user_id=request.user.id).delete()
+        Dashboards.objects.filter(user_id=request.user.id).delete()
+        return Response(status=status.HTTP_200_OK)
+
 
 class DashboardsApi(APIView):
 
@@ -52,6 +57,6 @@ class UserApi(APIView):
                 username=serialized.data['username'],
                 password=serialized.data['password']
             )
-            return Response({"data": serialized.data, "status": status.HTTP_201_CREATED})
+            return Response({"data": serialized.data}, status=status.HTTP_201_CREATED)
         else:
-            return Response({"errors": serialized._errors, "status": status.HTTP_400_BAD_REQUEST})
+            return Response({"errors": serialized._errors}, status=status.HTTP_400_BAD_REQUEST)

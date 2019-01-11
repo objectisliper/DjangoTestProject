@@ -3,7 +3,6 @@ from celery.task import task, periodic_task
 from .models import TrelloTokens, Dashboards, Lists, Cards
 from trello import TrelloClient
 from django.db import transaction
-from celery.schedules import crontab
 
 
 @task(queue='update_card')

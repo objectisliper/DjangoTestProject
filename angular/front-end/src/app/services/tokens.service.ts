@@ -30,7 +30,7 @@ export class TokensService {
       );
   }
 
-  public updateOrCreateTokens(api_key, token): Observable<any>{
+  public updateOrCreateTokens(api_key, token): Observable<any> {
     const options = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json',
         'X-CSRFToken': this.cookieService.get('csrftoken'),
@@ -48,5 +48,15 @@ export class TokensService {
           return false;
         })
       );
+  }
+
+  public resetTokens(): Observable<any> {
+    const options = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json',
+        'X-CSRFToken': this.cookieService.get('csrftoken'),
+        'Authorization': 'JWT ' + localStorage.getItem('token')})
+    };
+
+    return this.http.delete('/api/tokens', options);
   }
 }

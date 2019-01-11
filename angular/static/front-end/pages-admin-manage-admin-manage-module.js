@@ -11614,7 +11614,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card mb-3\">\n  <div class=\"card-header\">Api key & Token for Trello</div>\n  <div class=\"card-body\">\n    <form (ngSubmit)=\"submit()\">\n      <div class=\"form-group\">\n        <label>Api key\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"tokens.api_key\" name=\"api_key\" required style=\"width: 250%;\">\n        </label>\n      </div>\n      <div class=\"form-group\">\n        <label>Token\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"tokens.token\" name=\"token\" required style=\"width: 250%;\">\n        </label>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"card mb-3\">\n  <div class=\"card-header\">Api key & Token for Trello</div>\n  <div class=\"card-body\">\n    <form (ngSubmit)=\"submit()\">\n      <div class=\"form-group\">\n        <label>Api key\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"tokens.api_key\" name=\"api_key\" required style=\"width: 250%;\">\n        </label>\n      </div>\n      <div class=\"form-group\">\n        <label>Token\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"tokens.token\" name=\"token\" required style=\"width: 250%;\">\n        </label>\n      </div>\n      <div class=\"d-flex\">\n        <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n        <button (click)=\"resetTokens()\" type=\"reset\" class=\"btn btn-danger\" style=\"margin-left: 20px;\">Delete tokens</button>\n      </div>\n      <h4 style=\"color: greenyellow; margin-top: 20px;\">{{ response.success }}</h4>\n      <h4 style=\"color: red; margin-top: 20px;\">{{ response.error }}</h4>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -11641,6 +11641,10 @@ var SettingsComponent = /** @class */ (function () {
             api_key: '',
             token: '',
         };
+        this.response = {
+            success: '',
+            error: ''
+        };
     }
     SettingsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -11657,8 +11661,23 @@ var SettingsComponent = /** @class */ (function () {
             if (data) {
                 _this.tokens.api_key = data['api_key'];
                 _this.tokens.token = data['token'];
+                _this.response.success = 'Tokens saved successful!';
             }
+        }, function () {
+            _this.response.error = 'Something went wrong, try again later!';
         });
+    };
+    SettingsComponent.prototype.resetTokens = function () {
+        var _this = this;
+        if (confirm('Are you sure you wanna delete tokens?')) {
+            this.tokensService.resetTokens().subscribe(function () {
+                _this.response.success = 'Tokens reset successful!';
+                _this.tokens.api_key = '';
+                _this.tokens.token = '';
+            }, function () {
+                _this.response.error = 'Something went wrong, try again later!';
+            });
+        }
     };
     SettingsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -11806,6 +11825,14 @@ var TokensService = /** @class */ (function () {
             }
             return false;
         }));
+    };
+    TokensService.prototype.resetTokens = function () {
+        var options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json',
+                'X-CSRFToken': this.cookieService.get('csrftoken'),
+                'Authorization': 'JWT ' + localStorage.getItem('token') })
+        };
+        return this.http.delete('/api/tokens', options);
     };
     TokensService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({

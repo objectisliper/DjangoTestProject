@@ -12,7 +12,12 @@
           <input type="text" class="form-control" [(ngModel)]="tokens.token" name="token" required style="width: 250%;">
         </label>
       </div>
-      <button type="submit" class="btn btn-primary">Save</button>
+      <div class="d-flex">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button (click)="resetTokens()" type="reset" class="btn btn-danger" style="margin-left: 20px;">Delete tokens</button>
+      </div>
+      <h4 style="color: greenyellow; margin-top: 20px;">{{ response.success }}</h4>
+      <h4 style="color: red; margin-top: 20px;">{{ response.error }}</h4>
     </form>
   </div>
 </div>
